@@ -10,5 +10,9 @@
   {
     "outputFile": "Styles/Partials/screen.css",
     "inputFile": "Styles/Partials/screen.scss"
+  },
+  {
+    "outputFile": "Styles/Partials/responsive.css",
+    "inputFile": "Styles/Partials/responsive.scss"
   }
 ]

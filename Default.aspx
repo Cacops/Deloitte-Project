@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="Styles/Plugins/nice-select.css" />
     <link rel="stylesheet" href="Styles/Partials/screen.min.css" />
+    <link rel="stylesheet" href="Styles/Partials/responsive.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -24,8 +25,12 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
+                        <h1>Beer'd</h1>
                         <img src="Images/logo.png" />
                     </a>
+                </div>
+                <div class="respo-menu-btn">
+                    <div class="respo-menu-btn-in"></div>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="#">Beers</a></li>
@@ -39,8 +44,8 @@
 
         <div class="jumbotron">
             <div class="container-fluid">
-                <h1>Discovering beer<br />
-                    just got easier.</h1>
+                <h2>Discovering beer<br />
+                    just got easier.</h2>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
@@ -51,7 +56,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="classWithPad no-padding-left">
-                        <h2>You're a couple moments away from getting a beer.</h2>
+                        <h3>You're a couple moments away from getting a beer.</h3>
                         <p>
                             Let's start with some basics. By letting us know a bit about your tastebuds,
                                 we'll be able to start gathering the information we need in order to get you
@@ -101,9 +106,9 @@
 
     <section class="advantages">
         <div class="container-fluid">
-            <div class="row">
                 <div class="adv-main text-center">What makes us different?</div>
                 <div class="adv-secondary text-uppercase text-center">We're focused on the needs of beer lovers.</div>
+            <div class="row">
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
