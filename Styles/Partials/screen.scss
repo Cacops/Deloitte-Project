@@ -18,7 +18,16 @@
     src: url('/Fonts/open-sans/OpenSans-Semibold-webfont.eot') format('embedded-opentype'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.svg') format('svg'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.ttf') format('truetype'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.woff') format('woff');
 }
 
-$body-bg: #000;
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('/Fonts/open-sans/OpenSans-Italic-webfont.eot') format('embedded-opentype'), url('/Fonts/open-sans/OpenSans-Italic-webfont.svg') format('svg'), url('/Fonts/open-sans/OpenSans-Italic-webfont.ttf') format('truetype'), url('/Fonts/open-sans/OpenSans-Italic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'AndadaRegular';
+    src: url('../Fonts/andada/Andada-Regular.ttf') format('truetype');
+}
+
 $text-color: #333332;
 
 $navbar-default-bg: #FFF;
@@ -27,9 +36,19 @@ $navbar-default-color: #333332;
 $navbar-default-link-color: #333332;
 $navbar-default-link-hover-color: #666664;
 
-$font-family-sans-serif: 'OpenSansBold';
+$font-family-sans-serif: 'OpenSansRegular';
 
 $btn-primary-bg: #0e76bc;
+$btn-primary-bg-orange: #f1592a;
+
+$input-bg: #f3f3f4;
+$input-border: #f6f6f7;
+$input-color: #7e7f82;
+$legend-color: #7e7f82;
+$legend-border-color: #FFF;
+$input-color-placeholder: #7e7f82;
+$input-height-base: 48px;
+
 
 
 @import '../Bootstrap/_bootstrap.scss';
@@ -41,7 +60,7 @@ $btn-primary-bg: #0e76bc;
 .container-fluid {
     margin-right: auto;
     margin-left: auto;
-    max-width: 1020px;
+    max-width: 1050px;
 }
 
 
@@ -80,6 +99,7 @@ $btn-primary-bg: #0e76bc;
     color: white;
     padding: 109px 0 37px 0;
     font-family: 'OpenSansBold';
+    margin-bottom: 25px;
 }
 
 .jumbotron h1, .jumbotron .h1 {
@@ -89,8 +109,259 @@ $btn-primary-bg: #0e76bc;
     margin-bottom: 40px;
 }
 
-a.btn.btn-primary {
+.btn-primary {
     padding: 10px 35px;
     border-radius: 20px;
     font-family: 'OpenSansSemiBold';
+}
+
+.btn-orange {
+    background-color: #f1592a;
+    border-color: #ef4713;
+}
+
+.btn-orange:hover {
+    background-color: #ef4713;
+}
+
+
+.btn-wider {
+    padding: 10px 38px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.nice-select {
+    float: none;
+    background-color: #f3f3f4;
+    border: 1px solid #f6f6f7;
+    box-shadow: inset 0 0 1px rgba(0,0,0,.025);
+    font-size: 16px;
+    padding: 3px 15px;
+    height: 48px;
+    color: #7e7f82;
+}
+
+.nice-select .list {
+    width: 100%;
+    margin-top: 2px;
+}
+
+.nice-select:after {
+    border-bottom: 4px solid #a9abae;
+    border-right: 4px solid #a9abae;
+    content: '';
+    border-radius: 0 4px 0 4px;
+    display: block;
+    height: 15px;
+    margin-top: -8px;
+    pointer-events: none;
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 15px;
+}
+
+.form-control {
+    box-shadow: inset 0 0px 1px rgba(0,0,0,.025);
+    font-size: 16px;
+    padding: 6px 15px;
+}
+
+.form-control:focus {
+    border-color: #999;
+    box-shadow: none;
+}
+
+
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-left: 2px;
+    font-family: "OpenSansBold";
+}
+
+.content h2 {
+    font-family: 'AndadaRegular';
+    font-size: 35px;
+    margin-top: 19px;
+}
+
+.content p {
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    margin: 0 0 5px;
+}
+
+#beer_form {
+    margin-top: 18px;
+}
+
+#beer_form button:first-of-type {
+    margin-right: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.classWithPad {
+    padding: 0 11px;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.content {
+    padding-bottom: 53px;
+}
+
+.advantages {
+    background: #f3f3f4;
+
+    .adv-main {
+        font-size: 44px;
+        margin-top: 44px;
+    }
+
+    .adv-secondary {
+        font-size: 30px;
+        margin-top: 6px;
+        letter-spacing: 0.005em;
+    }
+
+    .table td {
+        border-top: 0;
+        padding: 0;
+
+        div {
+            text-align: center;
+            width: 225px;
+            margin-left: 30px;
+
+            strong {
+                display: block;
+                font-size: 23px;
+                font-family: 'OpenSansBold';
+                margin-top: 40px;
+            }
+
+            img {
+                display: block;
+                margin: auto;
+                margin-top: 30px;
+            }
+
+            span {
+                font-family: 'OpenSansItalic';
+                margin-top: 37px;
+                display: block;
+                font-size: 20px;
+                line-height: 27px;
+                letter-spacing: 0.01em;
+            }
+        }
+
+        div.img {
+            margin-left: 0;
+            height: 66px;
+        }
+
+        div.pub-less img {
+            margin-top: 20px;
+        }
+
+        div.pub-less div.img {
+            height: 76px;
+        }
+    }
+
+    .table td:first-of-type div {
+        margin-left: 0;
+    }
+
+    .learn-more-block {
+        text-align: center;
+        margin: 102px 0 55px 0;
+    }
+}
+
+footer {
+    background: #404041;
+    color: #FFF;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    position: relative;
+    padding: 36px 0;
+
+
+    > div.container-fluid {
+        padding-left: 11px;
+    }
+
+    div.contact-address {
+        width: 225px;
+    }
+
+    div.copyright {
+        text-shadow: -1px 0 #393838, 0 1px #393838, 1px 0 #393838, 0 -1px #393838;
+        color: #66676a;
+        margin-top: 18px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    /* brigther 1px line on top of the footer */
+    :before {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: #565657;
+        content: ' ';
+        left: 0;
+        top: 0;
+    }
+    /* darker 1px line on top of the footer */
+    :after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: #2e2e2f;
+        content: ' ';
+        left: 0;
+        top: 1px;
+    }
+
+    > div > div:first-of-type {
+        padding-top: 4px;
+        letter-spacing: 0.023em;
+        line-height: 22px;
+    }
+
+    > div > div:last-of-type {
+        padding-right: 6px;
+    }
+}
+
+br.clear {
+    clear: both;
+    float: none;
+    font-size: 0px;
 }
