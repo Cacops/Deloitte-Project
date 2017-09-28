@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Styles/base.css",
+    "inputFile": "Styles/base.scss"
+  },
+  {
+    "outputFile": "Styles/Partials/typography.css",
+    "inputFile": "Styles/Partials/typography.scss"
+  },
+  {
+    "outputFile": "Styles/Partials/screen.css",
+    "inputFile": "Styles/Partials/screen.scss"
+  }
+]

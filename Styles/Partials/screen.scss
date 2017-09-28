@@ -1,0 +1,96 @@
+﻿@font-face {
+    font-family: 'Pacifico';
+    src: url('/Fonts/pacifico/Pacifico-webfont.woff') format('woff'), url('/Fonts/pacifico/Pacifico-webfont.eot') format('embedded-opentype'), url('/Fonts/pacifico/Pacifico-webfont.svg') format('svg'), url('/Fonts/pacifico/Pacifico-webfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('/Fonts/open-sans/OpenSans-Bold-webfont.eot') format('embedded-opentype'), url('/Fonts/open-sans/OpenSans-Bold-webfont.svg') format('svg'), url('/Fonts/open-sans/OpenSans-Bold-webfont.ttf') format('truetype'), url('/Fonts/open-sans/OpenSans-Bold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('/Fonts/open-sans/OpenSans-Regular-webfont.eot') format('embedded-opentype'), url('/Fonts/open-sans/OpenSans-Regular-webfont.svg') format('svg'), url('/Fonts/open-sans/OpenSans-Regular-webfont.ttf') format('truetype'), url('/Fonts/open-sans/OpenSans-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('/Fonts/open-sans/OpenSans-Semibold-webfont.eot') format('embedded-opentype'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.svg') format('svg'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.ttf') format('truetype'), url('/Fonts/open-sans/OpenSans-Semibold-webfont.woff') format('woff');
+}
+
+$body-bg: #000;
+$text-color: #333332;
+
+$navbar-default-bg: #FFF;
+$navbar-height: 106px;
+$navbar-default-color: #333332;
+$navbar-default-link-color: #333332;
+$navbar-default-link-hover-color: #666664;
+
+$font-family-sans-serif: 'OpenSansBold';
+
+$btn-primary-bg: #0e76bc;
+
+
+@import '../Bootstrap/_bootstrap.scss';
+@import '../base.scss';
+
+
+
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1020px;
+}
+
+
+.navbar-default {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    width: 100%;
+    border: none;
+    @include border-radius(0);
+}
+
+.navbar-default .navbar-brand {
+    padding: 15px;
+}
+
+.navbar-default .navbar-nav {
+    float: right;
+
+    li {
+        a {
+            font-family: 'OpenSansRegular';
+            font-size: 18px;
+            padding-top: 44px;
+            padding-bottom: 41px;
+            padding-right: 0px;
+            padding-left: 42px;
+            letter-spacing: 0.02em;
+        }
+    }
+}
+
+.jumbotron {
+    background-image: url("/Images/hero.jpg");
+    background-size: cover;
+    background-position: 0px -148px;
+    color: white;
+    padding: 109px 0 37px 0;
+    font-family: 'OpenSansBold';
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    font-size: 50px;
+    line-height: 75px;
+    margin-top: 22px;
+    margin-bottom: 40px;
+}
+
+a.btn.btn-primary {
+    padding: 10px 35px;
+    border-radius: 20px;
+    font-family: 'OpenSansSemiBold';
+}
