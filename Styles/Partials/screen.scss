@@ -49,6 +49,7 @@ $legend-border-color: #FFF;
 $input-color-placeholder: #7e7f82;
 $input-height-base: 48px;
 
+$default-box-shadow: 1px 2px 10px rgba(0,0,0,0.5);
 
 
 @import '../Bootstrap/_bootstrap.scss';
@@ -64,18 +65,33 @@ h1 {
 
 .btn-primary {
     padding: 10px 35px;
-    border-radius: 20px;
+    @include border-radius(20px);
     font-family: 'OpenSansSemiBold';
 }
 
 .btn-orange {
     background-color: #f1592a;
     border-color: #ef4713;
-}
 
-.btn-orange:hover {
-    background-color: #ef4713;
-    border-color: #ef4713;
+    &:hover {
+        background-color: #ef4713;
+        border-color: #ef4713;
+    }
+
+    &:active {
+        background-color: #d84113;
+        border-color: #d84113;
+
+        &:hover {
+            background-color: #d84113;
+            border-color: #d84113;
+        }
+    }
+
+    &:focus {
+        background-color: #d84113;
+        border-color: #d84113;
+    }
 }
 
 
@@ -123,15 +139,24 @@ br.clear {
     margin-left: auto;
     max-width: 1050px;
 }
+
+h2 {
+    font-size: 50px;
+    line-height: 75px;
+    margin: 22px 0;
+    font-family: 'OpenSansBold';
+}
+
 /*Basic stuff END*/
 
 
 .navbar-default {
     background-color: rgba(255, 255, 255, 0.7);
-    position: absolute;
     width: 100%;
     border: none;
     @include border-radius(0);
+    border-bottom: 1px solid #696969;
+    margin-bottom: 0;
 
     .navbar-brand {
         padding: 15px;
@@ -162,19 +187,20 @@ br.clear {
     }
 }
 
+.page-index .navbar-default {
+    border-bottom: none;
+    position: absolute;
+}
+
 .jumbotron {
     background-image: url("/Images/hero.jpg");
     background-size: cover;
     background-position: 0px -148px;
     color: white;
     padding: 109px 0 37px 0;
-    font-family: 'OpenSansBold';
     margin-bottom: 25px;
 
-    h2, .h2 {
-        font-size: 50px;
-        line-height: 75px;
-        margin-top: 22px;
+    h2 {
         margin-bottom: 40px;
     }
 }
@@ -183,8 +209,7 @@ br.clear {
     float: none;
     background-color: #f3f3f4;
     border: 1px solid #f6f6f7;
-    box-shadow: inset 0 0 1px rgba(0,0,0,.025);
-    font-size: 16px;
+    box-shadow: $default-box-shadow;
     padding: 3px 15px;
     height: 48px;
     color: #7e7f82;
@@ -198,7 +223,7 @@ br.clear {
         border-bottom: 4px solid #a9abae;
         border-right: 4px solid #a9abae;
         content: '';
-        border-radius: 0 4px 0 4px;
+        @include border-radius(0 4px 0 4px);
         display: block;
         height: 15px;
         margin-top: -8px;
@@ -223,9 +248,17 @@ br.clear {
     font-size: 16px;
     padding: 6px 15px;
 
-    :focus {
+    &:focus {
         border-color: #999;
         box-shadow: none;
+    }
+}
+
+.form-group {
+    .req {
+        color: red;
+        font-family: 'OpenSansRegular';
+        font-weight: 400;
     }
 }
 
@@ -382,5 +415,92 @@ footer {
 
     > div > div:last-of-type {
         padding-right: 6px;
+    }
+}
+
+.answer-info {
+    display: none;
+    position: absolute;
+    background: #FFF;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    margin: -4px 0 0 5px;
+    box-shadow: $default-box-shadow;
+}
+
+.question-info {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #0e76bc;
+    border-radius: 8px;
+    position: relative;
+    top: 2px;
+    cursor: help;
+
+    &:after {
+        position: absolute;
+        content: '?';
+        color: #FFF;
+        left: 5px;
+        top: -2px;
+    }
+}
+
+#contact_form {
+    textarea.form-control {
+        height:244px;
+    }
+}
+
+.writeUs-block {
+    margin-top: 65px;
+}
+
+.address-block {
+    font-size: 16px;
+
+    #g_map {
+        height: 300px;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    .email {
+        position: relative;
+        padding-left: 23px;
+        margin-top: 20px;
+
+        &:before {
+            content: ' ';
+            background: url('/Images/mail-black.png') center center no-repeat;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            height: 16px;
+            width: 16px;
+            background-size: 16px;
+        }
+    }
+
+
+    .mobile {
+        position: relative;
+        padding-left: 23px;
+        margin-top: 5px;
+
+        &:before {
+            content: ' ';
+            background: url('/Images/phone-black.png') center center no-repeat;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            height: 16px;
+            width: 16px;
+            background-size: 16px;
+        }
     }
 }

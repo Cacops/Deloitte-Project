@@ -18,13 +18,13 @@
     <script src="Scripts/jquery.nice-select.js"></script>
     <script src="Scripts/controller.js"></script>
 </head>
-<body>
+<body class="page-index">
 
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/Default.aspx">
                         <h1>Beer'd</h1>
                         <img src="Images/logo.png" />
                     </a>
@@ -41,7 +41,9 @@
                 </ul>
             </div>
         </nav>
+    </header>
 
+    <section class="banner">
         <div class="jumbotron">
             <div class="container-fluid">
                 <h2>Discovering beer<br />
@@ -49,7 +51,7 @@
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
-    </header>
+    </section>
 
     <section class="content">
         <div class="container-fluid">
@@ -106,8 +108,8 @@
 
     <section class="advantages">
         <div class="container-fluid">
-                <div class="adv-main text-center">What makes us different?</div>
-                <div class="adv-secondary text-uppercase text-center">We're focused on the needs of beer lovers.</div>
+            <div class="adv-main text-center">What makes us different?</div>
+            <div class="adv-secondary text-uppercase text-center">We're focused on the needs of beer lovers.</div>
             <div class="row">
                 <div class="table-responsive">
                     <table class="table">
