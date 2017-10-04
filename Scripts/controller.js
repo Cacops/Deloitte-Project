@@ -22,10 +22,11 @@
 
 });
 
+
 function gMapInit() {
     var center = { lat: 47.7194731, lng: -122.3524758 };
 
-    var map = new google.maps.Map(document.getElementById('g_map'), {
+    var map = new google.maps.Map(document.getElementById('gMap'), {
         zoom: 12,
         center: center
     });
@@ -38,8 +39,8 @@ function gMapInit() {
 
     var marker = new google.maps.Marker({
         position: center,
-        map: map,
-        title: 'Uluru (Ayers Rock)'
+        icon: '/Images/gMap-Marker.png',
+        map: map
     });
 
     marker.addListener('click', function () {

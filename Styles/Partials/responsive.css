@@ -9,7 +9,7 @@
       background: white;
       z-index: 1;
       border-bottom: 1px solid #696969;
-      box-shadow: 0px 5px 13px #888; }
+      box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.5); }
       .navbar-default.open .navbar-header {
         border-bottom: 1px solid #696969; }
     .navbar-default .respo-menu-btn {
@@ -79,8 +79,11 @@
     .navbar-default .navbar-brand img {
       display: block;
       width: 175px; }
-  #beer_form button {
-    margin-top: 5px; } }
+  .content #beerForm button:first-of-type {
+    margin-right: 16px; }
+  #beerForm button {
+    margin-top: 5px;
+    padding: 10px 31px; } }
 
 /* Special Media for advangates. Many stuff is no needed under 700px anymore */
 @media screen and (min-width: 700px) and (max-width: 1000px) {

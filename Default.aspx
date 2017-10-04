@@ -15,11 +15,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="Scripts/jquery.nice-select.js"></script>
     <script src="Scripts/controller.js"></script>
+    <script src="Scripts/app.js"></script>
 </head>
-<body class="page-index">
-
+<body class="page-index" ng-app="beerApp">
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -76,19 +77,40 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="classWithPad no-padding-right">
-                        <form id="beer_form">
+                        <form ng-submit="submit(beerForm, '/Default.aspx')" ng-controller="formController" id="beerForm" name="beerForm" method="post" novalidate="novalidate">
+
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">{{answer.title}}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>{{answer.message}}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="fav_beer">
                                     What's your favorite beer?
                                 </label>
-                                <input type="text" class="form-control" id="fav_beer" name="fav_beer" placeholder="Jane Doe" />
+                                <input ng-model="formData.favBeer" type="text" class="form-control" id="favBeer" name="favBeer" placeholder="Jane Doe" required="required" />
+                                <span ng-show="(beerForm.favBeer.$touched || beerForm.$submitted) && beerForm.favBeer.$invalid" class="ng-label-invalid">You need to write your favourite beer</span>
                             </div>
                             <div class="form-group">
                                 <label for="drink_period">
                                     How many times a week do you drink beer?
                                 </label>
-                                <select id="drink_period" name="drink_period" class="nice-select">
-                                    <option data-display="Select an option">I don't know</option>
+                                <select ng-model="formData.drinkPeriod" id="drinkPeriod" name="drinkPeriod" class="nice-select">
+                                    <option value="" data-display="Select an option">I don't know</option>
                                     <option value="0">I don't drink bear</option>
                                     <option value="1">Once per week</option>
                                     <option value="2">Two times per week</option>
@@ -97,8 +119,8 @@
                                     <option value="5">Five times per week</option>
                                 </select>
                             </div>
-                            <button type="submit" name="get_advice" class="btn btn-primary btn-orange btn-wider">Get Advice</button>
-                            <button type="submit" name="get_beer" class="btn btn-primary btn-wider">Get a Beer</button>
+                            <button ng-model="formData.getAdvice" ng-click="formData.getAdvice=true" type="submit" value="1" name="getAdvice" class="btn btn-primary btn-orange btn-wider">Get Advice</button>
+                            <button ng-model="formData.getBeer" ng-click="formData.getBeer=true" type="submit" value="1" name="getBeer" class="btn btn-primary btn-wider">Get a Beer</button>
                         </form>
                     </div>
                 </div>

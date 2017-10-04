@@ -13,7 +13,7 @@
             background: rgba(255,255,255,1);
             z-index: 1;
             border-bottom: 1px solid #696969;
-            box-shadow: 0px 5px 13px #888;
+            box-shadow: 0px 5px 13px rgba(0,0,0,0.5);
 
             .navbar-header {
                 border-bottom: 1px solid #696969;
@@ -131,8 +131,13 @@
         }
     }
 
-    #beer_form button {
+    .content #beerForm button:first-of-type {
+        margin-right: 16px;
+    }
+
+    #beerForm button {
         margin-top: 5px;
+        padding: 10px 31px;
     }
 }
 

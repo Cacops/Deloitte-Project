@@ -16,10 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4YQVX6W2yMKMdMI9OfSQ_uwdm0iMjIBs"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="Scripts/jquery.nice-select.js"></script>
     <script src="Scripts/jquery.nice-select.js"></script>
     <script src="Scripts/gmaps.js"></script>
     <script src="Scripts/controller.js"></script>
+    <script src="Scripts/app.js"></script>
 </head>
 <body class="page-contact">
     <header>
@@ -69,40 +71,39 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="classWithPad no-padding-right">
-                        <div id="g_map"></div>
+                        <div id="gMap"></div>
                         <script>gMapInit();</script>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid writeUs-block">
-            <form id="contact_form">
+            <form id="contactForm" method="post">
                 <h3>Write to us</h3>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="classWithPad no-padding-left">
 
                             <div class="form-group">
-                                <label for="fav_beer">
+                                <label for="contactName">
                                     Name and surname:<span class="req">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="con_name" name="con_name" placeholder="Name and Surname" />
+                                <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name and Surname" />
                             </div>
                             <div class="form-group">
-                                <label for="fav_beer">
+                                <label for="contactEmail">
                                     E-mail:<span class="req">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="con_email" name="con_email" placeholder="E-mail" />
+                                <input type="text" class="form-control" id="contactEmail" name="contactEmail" placeholder="E-mail" />
                             </div>
                             <div class="form-group">
-                                <label for="fav_beer">
+                                <label for="contactMobile">
                                     Mobile:
                                 </label>
-                                <span class="question-info" data-id="#answer-mobile"></span>
-                                <span id="answer-mobile" class="answer-info">
-                                    We preffer more personal contact, but do not keen on that.
+                                <span class="question-info" data-id="#answerMobile"></span>
+                                <span id="answerMobile" class="answer-info">We preffer more personal contact, but do not keen on that.
                                 </span>
-                                <input type="text" class="form-control" id="con_mobile" name="con_mobile" placeholder="Mobile" />
+                                <input type="text" class="form-control" id="contactMobile" name="contactMobile" placeholder="Mobile" />
                             </div>
                         </div>
                     </div>
@@ -111,12 +112,12 @@
                     <div class="row">
                         <div class="classWithPad no-padding-right">
                             <div class="form-group">
-                                <label for="fav_beer">
+                                <label for="contactText">
                                     Message:<span class="req">*</span>
                                 </label>
-                                <textarea class="form-control" id="con_text" name="con_text" placeholder="Enter message here." ></textarea>
+                                <textarea class="form-control" id="contactText" name="contactText" placeholder="Enter message here."></textarea>
                             </div>
-                            <button type="submit" name="get_advice" class="btn btn-primary btn-orange btn-wider float-right">Send</button>
+                            <button type="submit" name="send" class="btn btn-primary btn-orange btn-wider float-right">Send</button>
                         </div>
                     </div>
                 </div>
