@@ -77,7 +77,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="classWithPad no-padding-right">
-                        <form ng-submit="submit(beerForm, '/Default.aspx')" ng-controller="formController" id="beerForm" name="beerForm" method="post" novalidate="novalidate">
+                        <form ng-submit="submit(beerForm, '/Default.aspx')" ng-controller="formControllerBeer" id="beerForm" name="beerForm" method="post" novalidate="novalidate">
 
                             <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">

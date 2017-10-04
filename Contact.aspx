@@ -23,7 +23,7 @@
     <script src="Scripts/controller.js"></script>
     <script src="Scripts/app.js"></script>
 </head>
-<body class="page-contact">
+<body class="page-contact" ng-app="beerApp">
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -78,7 +78,27 @@
             </div>
         </div>
         <div class="container-fluid writeUs-block">
-            <form id="contactForm" method="post">
+            <form ng-submit="submit(contactForm, '/Contact.aspx')" ng-controller="formControllerContact" id="contactForm" name="contactForm" method="post" novalidate="novalidate">
+
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{{answer.title}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>{{answer.message}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <h3>Write to us</h3>
                 <div class="col-md-6">
                     <div class="row">
@@ -88,22 +108,24 @@
                                 <label for="contactName">
                                     Name and surname:<span class="req">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name and Surname" />
+                                <input ng-model="formData.contactName" type="text" class="form-control" id="contactName" name="contactName" placeholder="Name and Surname" required="required" />
+                                <span ng-show="(contactForm.contactName.$touched || contactForm.$submitted) && contactForm.contactName.$invalid" class="ng-label-invalid">You need to write your Name</span>
                             </div>
                             <div class="form-group">
                                 <label for="contactEmail">
                                     E-mail:<span class="req">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="contactEmail" name="contactEmail" placeholder="E-mail" />
+                                <input ng-model="formData.contactEmail" type="email" class="form-control" id="contactEmail" name="contactEmail" placeholder="E-mail" required="required" />
+                                <span ng-show="(contactForm.contactEmail.$touched || contactForm.$submitted) && contactForm.contactEmail.$error.required" class="ng-label-invalid">You need to write your Email</span>
+                                <span ng-show="(contactForm.contactEmail.$touched || contactForm.$submitted) && contactForm.contactEmail.$error.email" class="ng-label-invalid">Invalid email address.</span>
                             </div>
                             <div class="form-group">
                                 <label for="contactMobile">
                                     Mobile:
                                 </label>
                                 <span class="question-info" data-id="#answerMobile"></span>
-                                <span id="answerMobile" class="answer-info">We preffer more personal contact, but do not keen on that.
-                                </span>
-                                <input type="text" class="form-control" id="contactMobile" name="contactMobile" placeholder="Mobile" />
+                                <span id="answerMobile" class="answer-info">We preffer more personal contact, but do not keen on that.</span>
+                                <input ng-model="formData.contactMobile" type="text" class="form-control" id="contactMobile" name="contactMobile" placeholder="Mobile" />
                             </div>
                         </div>
                     </div>
@@ -115,9 +137,10 @@
                                 <label for="contactText">
                                     Message:<span class="req">*</span>
                                 </label>
-                                <textarea class="form-control" id="contactText" name="contactText" placeholder="Enter message here."></textarea>
+                                <textarea ng-model="formData.contactText" class="form-control" id="contactText" name="contactText" placeholder="Enter message here." required="required"></textarea>
+                                <span ng-show="(contactForm.contactText.$touched || contactForm.$submitted) && contactForm.contactText.$invalid" class="ng-label-invalid">You need to write your Message</span>
                             </div>
-                            <button type="submit" name="send" class="btn btn-primary btn-orange btn-wider float-right">Send</button>
+                            <button ng-model="formData.sendContactMessage" ng-click="formData.sendContactMessage=true" type="submit" name="sendContactMessage" class="btn btn-primary btn-orange btn-wider float-right">Send</button>
                         </div>
                     </div>
                 </div>

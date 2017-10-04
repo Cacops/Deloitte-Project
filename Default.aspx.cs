@@ -49,6 +49,10 @@ public partial class _Default : System.Web.UI.Page
             {
                 answer.Message = "We cannot deliver you " + beer + ", if you do not post us info about how much do you drink.";
             }
+            else if(timesPerWeek == 0)
+            {
+                answer.Message = "We won't deliver you " + beer + " because you don't drink any.";
+            }
             else
             {
                 answer.Message = "We will deliver " + beer + " " + timesPerWeek + "x per week. Thank you for order!";
